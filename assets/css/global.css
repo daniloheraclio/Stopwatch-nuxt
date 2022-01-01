@@ -1,0 +1,58 @@
+@media (max-width: 1023px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 639px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply text-gray-200 bg-gray-900;
+}
+
+.font-rajdhani {
+  font-family: Rajdhani;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.4s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.button {
+  @apply p-6 rounded-md flex justify-center items-center font-semibold mt-8 transition-colors w-full;
+}
+
+.button.completed {
+  @apply bg-white text-gray-700 border-b-2 border-green-500 cursor-not-allowed h-20;
+}
+
+.button.abandon {
+  @apply bg-white text-gray-700 hover:bg-red-500 hover:text-white h-20;
+}
+
+.button.start {
+  @apply bg-blue-500 text-white hover:bg-blue-800 h-20;
+}
+
+.button.failed {
+  @apply text-white bg-red-700 hover:bg-red-800 h-3 w-1/2;
+}
+
+.button.succeeded {
+  @apply text-white bg-green-700 hover:bg-green-800 h-3 w-1/2;
+}
