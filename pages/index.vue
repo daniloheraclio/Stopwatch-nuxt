@@ -4,7 +4,7 @@
   >
     <button class="button start" @click="start">Start</button>
     <button class="button start" @click="pause">Pause</button>
-    <button class="button start">Reset</button>
+    <button class="button start" @click="reset">Reset</button>
   </div>
 </template>
 
@@ -16,12 +16,16 @@ export default {
   methods: {
     ...mapMutations({
       setIsActive: MUTATIONS_TYPES.SET_IS_ACTIVE,
+      resetTime: MUTATIONS_TYPES.RESET_TIME,
     }),
     start() {
       this.setIsActive(true);
     },
     pause() {
       this.setIsActive(false);
+    },
+    reset() {
+      this.resetTime();
     },
   },
 };
