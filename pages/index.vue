@@ -2,17 +2,41 @@
   <div
     class="flex flex-col lg:flex-row flex-1 lg:flex-none lg:mt-16 sm:gap-x-10 md:gap-x-15"
   >
-    <button class="button start" @click="start">Start</button>
-    <button class="button start" @click="pause">Pause</button>
-    <button class="button start" @click="reset">Reset</button>
+    <button
+      class="button start"
+      :class="{ 'button disabled': isActive }"
+      :disabled="isActive"
+      @click="start"
+    >
+      Start
+    </button>
+    <button
+      class="button start"
+      :class="{ 'button disabled': !isActive }"
+      :disabled="!isActive"
+      @click="pause"
+    >
+      Pause
+    </button>
+    <button
+      class="button start"
+      :class="{ 'button disabled': isActive }"
+      :disabled="isActive"
+      @click="reset"
+    >
+      Reset
+    </button>
   </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations, mapState } from 'vuex';
 import { MUTATIONS_TYPES } from '@/store/index';
 export default {
   name: 'IndexPage',
+  computed: {
+    ...mapState(['isActive']),
+  },
   methods: {
     ...mapMutations({
       setIsActive: MUTATIONS_TYPES.SET_IS_ACTIVE,

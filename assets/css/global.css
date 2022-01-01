@@ -15,8 +15,8 @@ body {
   @apply text-gray-200 bg-gray-900;
 }
 
-.font-rajdhani {
-  font-family: Rajdhani;
+.font-jetbrains {
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .slide-fade-enter-active {
@@ -55,4 +55,8 @@ body {
 
 .button.succeeded {
   @apply text-white bg-green-700 hover:bg-green-800 h-3 w-1/2;
+}
+
+.button.disabled {
+  @apply text-gray-300 bg-gray-600 cursor-not-allowed hover:bg-gray-600;
 }
