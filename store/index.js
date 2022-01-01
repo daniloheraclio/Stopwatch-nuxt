@@ -5,18 +5,23 @@ export const MUTATIONS_TYPES = {
 };
 
 export const state = () => ({
-  seconds: 58,
+  totalSeconds: 58,
   isActive: false,
 });
 
 export const mutations = {
   [MUTATIONS_TYPES.UPDATE_TIME](state, val) {
-    state.seconds = state.seconds + val;
+    state.totalSeconds = state.totalSeconds + val;
   },
   [MUTATIONS_TYPES.SET_IS_ACTIVE](state, isActive) {
     state.isActive = isActive;
   },
   [MUTATIONS_TYPES.RESET_TIME](state) {
-    state.seconds = 0;
+    state.totalSeconds = 0;
   },
+};
+
+export const getters = {
+  minutes: (state) => Math.floor(state.totalSeconds / 60),
+  seconds: (state) => state.totalSeconds % 60,
 };

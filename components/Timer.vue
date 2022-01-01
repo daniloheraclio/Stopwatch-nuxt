@@ -2,12 +2,12 @@
   <section
     class="flex justify-center items-center mt-8 lg:mt-14 text-9xl text-title font-rajdhani"
   >
-    <p>{{ seconds }}</p>
+    <p>{{ timeFormatted(minutes) }}:{{ timeFormatted(seconds) }}</p>
   </section>
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapState, mapGetters, mapMutations } from 'vuex';
 import { MUTATIONS_TYPES } from '@/store/index';
 
 let TIMER_REF;
@@ -18,6 +18,7 @@ export default {
   },
   computed: {
     ...mapState(['seconds', 'isActive']),
+    ...mapGetters(['seconds', 'minutes']),
   },
 
   methods: {
@@ -32,6 +33,9 @@ export default {
       } else {
         clearInterval(TIMER_REF);
       }
+    },
+    timeFormatted(time) {
+      return `${time}`.padStart(2, '0');
     },
   },
   watch: {
