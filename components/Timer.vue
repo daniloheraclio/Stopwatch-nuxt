@@ -1,6 +1,6 @@
 <template>
   <section
-    class="flex justify-center items-center mt-8 lg:mt-14 text-9xl text-title font-jetbrains"
+    class="flex justify-center items-center mt-8 lg:mt-14 text-9xl lg:text-12xl text-title font-jetbrains"
   >
     <p>{{ timeFormatted(minutes) }}:{{ timeFormatted(seconds) }}</p>
   </section>
