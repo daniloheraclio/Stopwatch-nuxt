@@ -5,7 +5,7 @@ export const MUTATIONS_TYPES = {
 };
 
 export const state = () => ({
-  totalSeconds: 58,
+  totalSeconds: 0,
   isActive: false,
 });
 

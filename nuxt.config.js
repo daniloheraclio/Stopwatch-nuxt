@@ -9,7 +9,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/png', href: '/favicon.png' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
       {
         rel: 'stylesheet',
@@ -43,8 +43,19 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    meta: {
+      title: 'Stopwatch',
+      author: 'Danilo Heraclio',
+    },
     manifest: {
+      name: 'Stopwatch',
       lang: 'en',
+      display: 'fullscreen',
+      background_color: '#101827',
+      theme: '#101827',
+    },
+    icon: {
+      fileName: 'app-icon.png',
     },
   },
 
